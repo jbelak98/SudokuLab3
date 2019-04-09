@@ -309,6 +309,59 @@ public class SudokuTest {
 			fail("Bad Sudoku");
 		}
 	}
+	
+	@Test
+
+public void fillDiagonalRegions_Test1() {
+
+	Sudoku test1 = null;
+
+	int[][] puzzle = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
+
+	
+
+	try {
+
+		test1 = new Sudoku(puzzle);
+
+		test1.FillDiagonalRegions();
+
+		
+
+	}
+	catch (Exception e) {
+		fail("Error");
+	}
+
+	
+
+}
+@Test
+
+public void fillDiagonalRegions_Test2() {
+
+	Sudoku test1 = null;
+
+	int[][] puzzle = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
+
+	
+
+	try {
+
+		test1 = new Sudoku(puzzle);
+
+		test1.FillDiagonalRegions();
+
+	
+
+	}
+	catch (Exception e) {
+		fail("Error");
+	}
+
+}	
+
+
 
 }
 
