@@ -297,6 +297,18 @@ public class Sudoku extends LatinSquare {
 		return i;
 	}
 
+	public static int[] shuffleArray(int[] array){
+		Random rgen = new Random();		
+
+		for (int i = 0; i < array.length; i++) {
+		    int randomizepos = rgen.nextInt(array.length);
+		    int temp = array[i];
+		    array[i] = array[randomizepos];
+		    array[randomizepos] = temp;
+		}
+		return array;
+	}
+
 
 }
 
