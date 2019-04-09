@@ -280,5 +280,23 @@ public class Sudoku extends LatinSquare {
 				}
 			}
 		}
+	
+	public void SetRegion(int r) {
+		int k = 1;
+		for (int i = (r / iSqrtSize) * iSqrtSize; i < ((r / iSqrtSize) * iSqrtSize) + iSqrtSize; i++) {
+			for (int j = (r % iSqrtSize) * iSqrtSize; j < ((r % iSqrtSize) * iSqrtSize) + iSqrtSize; j++) {
+				this.getPuzzle()[i][j] = k++;
+			}
+		}
 	}
+	
+	public int getRegionNbr(int iCol, int iRow) {
+
+		int i = (iCol / iSqrtSize) + ((iRow / iSqrtSize) * iSqrtSize);
+
+		return i;
+	}
+
+
+}
 
