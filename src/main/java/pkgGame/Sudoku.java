@@ -314,6 +314,25 @@ public class Sudoku extends LatinSquare {
 		SetRegion(i);
 		ShuffleRegion(i);
 	}
+		
+	private void ShuffleRegion(int c) {
+		
+		int[] region = getRegion(c);
+		shuffleArray(region);
+
+		int x = (c / iSqrtSize) * iSqrtSize;
+		int y = (c % iSqrtSize) * iSqrtSize;
+		int xMax = x + iSqrtSize;
+		int yMax = y + iSqrtSize;
+		int iCnt = 0;
+
+		for (; x < iMax; x++) {
+			for (y = (c % iSqrtSize) * iSqrtSize; y < yMax; y++) {
+				getPuzzle()[x][y] = region[iCnt++];
+			}
+		}
+	}
+
 
 }
 	
